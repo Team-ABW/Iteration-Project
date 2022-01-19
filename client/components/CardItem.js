@@ -24,9 +24,9 @@ function CardItem(props) {
           >
             Add
           </button>
-          <Link className='button is-info is-outlined' to={props.path}>
+          <button className='button is-info is-outlined' onClick={props.handleModalOpen}>
             View Profile
-          </Link>
+          </button>
         </div>
       </div>
     </>
