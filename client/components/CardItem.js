@@ -6,9 +6,11 @@ function CardItem(props) {
   const [showModal, setShowModal] = useState();
   const [display, setDisplay] = useState();
   const showHideclassName = showModal ? 'display-block' : 'display-none'; //sets the class of the modal so the CSS will display or hide it.
-  const handleModalOpen = (props) => {
+  const handleModalOpen = () => {
     setDisplay(
-    
+      <div>
+        <Profile props={props}/>
+      </div>
     )
     showModal ? setShowModal(false) : setShowModal(true); //change state of showModal to open or close the modal.
   };
@@ -38,7 +40,7 @@ function CardItem(props) {
             View Profile
           </button>
           <div className={showHideclassName}>
-            <Modal display={display} handleModalOpen={handleModalOpen} />
+            <Modal display={display} handleModalOpen={handleModalOpen()} />
           </div>
         </div>
       </div>
