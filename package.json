@@ -6,7 +6,9 @@
   "scripts": {
     "start": "NODE_ENV=production nodemon server/server.js",
     "build": "NODE_ENV=production webpack",
-    "dev": "concurrently \"nodemon server/server.js\" \"webpack serve --mode development\""
+    "dev": "concurrently \"nodemon server/server.js\" \"webpack serve --mode development\"",
+    "front": "webpack serve  --hot --mode development",
+    "back": "nodemon server/server.js"
   },
   "repository": {
     "type": "git",
