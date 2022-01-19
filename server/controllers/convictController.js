@@ -19,7 +19,7 @@ convictController.fetchMostWanted = (req, res, next) => {
   })
   .then(response => response.json())
   .then(data => {
-    const sortedByPublication = data.items.sort(compare).slice(0, 20);
+    const sortedByPublication = data.items.sort(compare).slice(0, 30);
 
     res.locals.convicts = sortedByPublication;
     return next();
