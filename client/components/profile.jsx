@@ -1,8 +1,8 @@
 import React from 'react'
 import './styles/profile.css';
 
-const Profile = () => {
-
+const Profile = (props) => {
+console.log(props)
 return(
   <div>
     <div className='card_item'>
@@ -22,7 +22,7 @@ return(
           <h5>Publication: {props.publication}</h5>
           <h5>FBI Field Office: {props.field_offices}</h5>
           <h5>Details: {props.details}</h5>
-          <h5>URL: {url}</h5>
+          <h5>URL: {props.url}</h5>
         </div>
     </div>
   </div>
