@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
-import './Navbar.css';
+import './styles/Navbar.css';
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -39,15 +39,6 @@ function Navbar() {
             <li className='nav-item'>
               <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                 Home
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link
-                to='/profile'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Convict
               </Link>
             </li>
             <li className='nav-item'>

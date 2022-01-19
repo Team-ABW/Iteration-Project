@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Cards.css';
+import './styles/Cards.css';
 import CardItem from './CardItem';
 import millerImg from '../images/Miller.jpg';
 import britImg from '../images/brit.png';
@@ -71,6 +71,7 @@ function Cards() {
     return convicts.map((convict) => {
       return (
         <CardItem
+          key = {convict.uid}
           title={convict.title}
           images={convict.images[0].original}
           details={convict.details}

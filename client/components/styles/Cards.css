@@ -50,7 +50,7 @@ h1 {
 .cards__item__pic-wrap {
   position: relative;
   width: 100%;
-  padding-top: 67%;
+  padding-top: 100%;
   overflow: hidden;
 }
 
@@ -69,7 +69,6 @@ h1 {
   font-size: 12px;
   font-weight: 700;
   color: #fff;
-  background-color: #1f98f4;
   box-sizing: border-box;
 }
 
@@ -89,7 +88,7 @@ h1 {
 }
 
 .cards__item__img:hover {
-  transform: scale(1.1);
+  transform: scale(1);
 }
 
 .cards__item__info {

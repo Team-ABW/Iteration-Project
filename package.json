@@ -6,7 +6,9 @@
   "scripts": {
     "start": "NODE_ENV=production nodemon server/server.js",
     "build": "NODE_ENV=production webpack",
-    "dev": "concurrently \"nodemon server/server.js\" \"webpack serve --mode development\""
+    "dev": "concurrently \"nodemon server/server.js\" \"webpack serve --mode development\"",
+    "front": "webpack serve  --hot --mode development",
+    "back": "nodemon server/server.js"
   },
   "repository": {
     "type": "git",
@@ -38,6 +40,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "axios": "^0.25.0",
     "cors": "^2.8.5",
     "express": "^4.17.2",
     "node-fetch": "^2.6.1",

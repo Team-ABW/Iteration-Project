@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 const convictController = {};
 
 convictController.fetchMostWanted = (req, res, next) => {
-  const base = 'https://api.fbi.gov/wanted/v1/list';
+  const base = 'https://api.fbi.gov/wanted/v1/list?sex=male';
   let query;
   let URL;
   
@@ -19,7 +19,7 @@ convictController.fetchMostWanted = (req, res, next) => {
   })
   .then(response => response.json())
   .then(data => {
-    const sortedByPublication = data.items.sort(compare).slice(0, 20);
+    const sortedByPublication = data.items.sort(compare).slice(0, 30);
 
     res.locals.convicts = sortedByPublication;
     return next();
