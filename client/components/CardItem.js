@@ -5,7 +5,7 @@ import Modal from './modal.jsx'
 import Profile from './profile.jsx'
 
 function CardItem(props) {
-  const [showModal, setShowModal] = useState();
+  const [showModal, setShowModal] = useState(false);
   const [display, setDisplay] = useState();
   const showHideclassName = showModal ? 'display-block' : 'display-none'; //sets the class of the modal so the CSS will display or hide it.
   const handleModalOpen = () => {
@@ -42,7 +42,7 @@ function CardItem(props) {
             View Profile
           </button>
           <div className={showHideclassName}>
-            <Modal display={display} handleModalOpen={handleModalOpen()} />
+            <Modal display={display} handleModalOpen={handleModalOpen} />
           </div>
         </div>
       </div>
