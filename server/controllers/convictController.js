@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 const convictController = {};
 
 convictController.fetchMostWanted = (req, res, next) => {
-  const base = 'https://api.fbi.gov/wanted/v1/list';
+  const base = 'https://api.fbi.gov/wanted/v1/list?sex=male';
   let query;
   let URL;
   

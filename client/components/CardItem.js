@@ -24,6 +24,8 @@ function CardItem(props) {
             className='cards__item__img'
             alt='Travel Image'
             src={props.images}
+            // style={{width:'200px',
+            // height: 'auto'}}
           />
         </figure>
         <div className='cards__item__info'>
@@ -41,10 +43,11 @@ function CardItem(props) {
           <button className='button is-info is-outlined' onClick={handleModalOpen}>
             View Profile
           </button>
-          <div className={showHideclassName}>
+          
+        </div>
+        <div className={showHideclassName}>
             <Modal display={display} handleModalOpen={handleModalOpen} />
           </div>
-        </div>
       </div>
     </>
   );
