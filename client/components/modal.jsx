@@ -1,13 +1,15 @@
 import React from 'react'
 import './styles/modal.css';
 
-const Modal = ({display, handleClose}) => {
+const Modal = ({display, handleModalOpen}) => {
 
 return(
-<div className = "modal">
-    <section className="modal-main">
+<div id= "modal">
+
+    <section id="modal-main">
+    
         {display}   
-        <button className= "button" type="button" onClick={handleClose}> Close </button>
+        <button id="closeButton" type="button" onClick={handleModalOpen}> Close </button>
       </section>
     </div>
 )
