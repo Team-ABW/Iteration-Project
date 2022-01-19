@@ -1,6 +1,8 @@
 import React from 'react';
 import {useState} from 'react'
 import './styles/modal.css';
+import Modal from './modal.jsx'
+import Profile from './profile.jsx'
 
 function CardItem(props) {
   const [showModal, setShowModal] = useState();
