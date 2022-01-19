@@ -24,6 +24,8 @@ function CardItem(props) {
             className='cards__item__img'
             alt='Travel Image'
             src={props.images}
+            // style={{width:'200px',
+            // height: 'auto'}}
           />
         </figure>
         <div className='cards__item__info'>
