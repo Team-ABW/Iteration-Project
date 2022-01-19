@@ -1,7 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {useState} from 'react'
+import './modal.css';
 
 function CardItem(props) {
+  const [showModal, setShowModal] = useState();
+  const [display, setDisplay] = useState();
+  const showHideclassName = showModal ? 'display-block' : 'display-none'; //sets the class of the modal so the CSS will display or hide it.
+  const handleModalOpen = () => {
+    setDisplay(
+    
+    )
+    showModal ? setShowModal(false) : setShowModal(true); //change state of showModal to open or close the modal.
+  };
   return (
     <>
       <div className='card_item'>
@@ -24,9 +34,12 @@ function CardItem(props) {
           >
             Add
           </button>
-          <button className='button is-info is-outlined' onClick={props.handleModalOpen}>
+          <button className='button is-info is-outlined' onClick={handleModalOpen}>
             View Profile
           </button>
+          <div className={showHideclassName}>
+            <Modal display={display} handleModalOpen={handleModalOpen} />
+          </div>
         </div>
       </div>
     </>
