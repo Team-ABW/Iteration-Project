@@ -41,10 +41,11 @@ function CardItem(props) {
           <button className='button is-info is-outlined' onClick={handleModalOpen}>
             View Profile
           </button>
-          <div className={showHideclassName}>
+          
+        </div>
+        <div className={showHideclassName}>
             <Modal display={display} handleModalOpen={handleModalOpen} />
           </div>
-        </div>
       </div>
     </>
   );
