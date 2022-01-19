@@ -1,12 +1,12 @@
 import React from 'react';
 import {useState} from 'react'
-import './modal.css';
+import './styles/modal.css';
 
 function CardItem(props) {
   const [showModal, setShowModal] = useState();
   const [display, setDisplay] = useState();
   const showHideclassName = showModal ? 'display-block' : 'display-none'; //sets the class of the modal so the CSS will display or hide it.
-  const handleModalOpen = () => {
+  const handleModalOpen = (props) => {
     setDisplay(
     
     )

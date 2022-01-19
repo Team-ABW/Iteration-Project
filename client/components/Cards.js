@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Cards.css';
+import './styles/Cards.css';
 import CardItem from './CardItem';
 import millerImg from '../images/Miller.jpg';
 import britImg from '../images/brit.png';
