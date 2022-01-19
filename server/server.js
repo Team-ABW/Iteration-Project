@@ -3,8 +3,7 @@ const app = express();
 const path = require('path');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
-const signupRouter = require('./routes/signup.js');
-const loginRouter = require('./routes/login.js');
+const authRouter = require('./routes/auth.js');
 const bodyParser = require('body-parser');
 const apiRouter = require('./routes/api');
 
@@ -18,8 +17,7 @@ app.use(cookieParser());
 app.use('/build', express.static(path.join(__dirname, '../build')));
 
 app.use('/api', apiRouter);
-app.use('/signup', signupRouter);
-app.use('/login', loginRouter);
+app.use('/auth', authRouter);
 
 app.get('/', (req, res) => {
   return res.status(200).sendFile(path.join(__dirname, '../client/index.html'));
