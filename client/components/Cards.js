@@ -71,6 +71,7 @@ function Cards() {
     return convicts.map((convict) => {
       return (
         <CardItem
+          key = {convict.uid}
           title={convict.title}
           images={convict.images[0].original}
           details={convict.details}
