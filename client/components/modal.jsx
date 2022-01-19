@@ -5,11 +5,10 @@ const Modal = ({display, handleModalOpen}) => {
 
 return(
 <div id= "modal">
-
+  <button id="closeButton" type="button" onClick={handleModalOpen}> Close </button>
     <section id="modal-main">
     
         {display}   
-        <button id="closeButton" type="button" onClick={handleModalOpen}> Close </button>
       </section>
     </div>
 )
