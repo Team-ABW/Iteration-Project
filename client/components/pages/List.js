@@ -37,6 +37,12 @@ export default function List() {
   }
 
   return (
-    <section className='my-convicts'>{!load && renderMyConvicts()}</section>
+    <div className='cards'>
+      <h1>My Convicts</h1>
+      <div className='cards__container'>
+        <div className='cards__wrapper'>{!load && renderMyConvicts()}</div>
+      </div>
+    </div>
+    // <section className='my-convicts'>{!load && renderMyConvicts()}</section>
   );
 }

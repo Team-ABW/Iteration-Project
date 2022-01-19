@@ -2,30 +2,29 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const cors = require('cors');
-
+const cookieParser = require('cookie-parser');
+const signupRouter = require('./routes/signup.js');
+const loginRouter = require('./routes/login.js');
+const bodyParser = require('body-parser');
 const apiRouter = require('./routes/api');
 
-/**
- * handle parsing request body
- */
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
+app.use(cookieParser());
 
-// statically serve everything in the build folder on the route '/build'
 app.use('/build', express.static(path.join(__dirname, '../build')));
 
 app.use('/api', apiRouter);
+app.use('/signup', signupRouter);
+app.use('/login', loginRouter);
 
-// serve index.html on the route '/'
 app.get('/', (req, res) => {
   return res.status(200).sendFile(path.join(__dirname, '../client/index.html'));
 });
 
-/**
- * configure express global error handler
- * @see https://expressjs.com/en/guide/error-handling.html#writing-error-handlers
- */
 app.use((err, req, res, next) => {
   const defaultErr = {
     log: 'Express error handler caught unknown middleware error',
