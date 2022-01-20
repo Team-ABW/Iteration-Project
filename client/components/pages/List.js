@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../../App.css';
-import { getConvictsFromDb } from '../../async';
+import { getConvictsFromDb, deleteConvictFromDb } from '../../async';
 import ListCardItem from '../ListCardItem';
 
 export default function List() {
@@ -9,11 +9,21 @@ export default function List() {
 
   useEffect(() => {
     getConvictsFromDb().then((data) => {
-      console.log(data); //array of crim obj
+      console.log(data);
       setMyConvicts(data);
       setLoad(false);
     });
   }, []);
+
+  function deleteHandleClick(props) {
+    deleteConvictFromDb(props).then((res) => {
+      console.log(props);
+      console.log('convict was deleted');
+      console.log(res);
+      setMyConvicts(res);
+    });
+
+  }
 
   function renderMyConvicts() {
     return myConvicts.map((convict) => {
@@ -30,7 +40,8 @@ export default function List() {
           url={convict.url}
           field_offices={convict.field_offices}
           criminal_id={convict.uid}
-          path={`/profile/${convict.criminal_id}`}
+          path={`/profile/${convict.title}`}
+          deleteHandleClick={deleteHandleClick}
         />
       );
     });
@@ -38,7 +49,7 @@ export default function List() {
 
   return (
     <div className='cards'>
-      <h1>My Convicts</h1>
+      <h1>My People of Interest</h1>
       <div className='cards__container'>
         <div className='cards__wrapper'>{!load && renderMyConvicts()}</div>
       </div>

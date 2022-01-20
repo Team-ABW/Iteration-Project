@@ -25,6 +25,21 @@ function Navbar({isLoggedIn, setIsLoggedIn}) {
 
   window.addEventListener('resize', showButton);
 
+  let investigationsTag = null;
+
+  if (isLoggedin) {
+    investigationsTag = 
+      <li className='nav-item'>
+        <Link
+          to='/list'
+          className='nav-links'
+          onClick={closeMobileMenu}
+        >
+          Investigations
+        </Link>
+      </li>
+  }
+
   return (
     <>
       <nav className='navbar'>
@@ -42,15 +57,8 @@ function Navbar({isLoggedIn, setIsLoggedIn}) {
                 Home
               </Link>
             </li>
-            <li className='nav-item'>
-              <Link
-                to='/list'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Investigations
-              </Link>
-            </li>
+
+            <li>{investigationsTag}</li>
 
             <li>
               <Link

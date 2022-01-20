@@ -73,10 +73,11 @@ export const getConvictById = (id) => {
 };
 
 export const deleteConvictFromDb = (body) => {
+  console.log(body);
   return new Promise((resolve, reject) => {
-    fetch(`http://localhost:3000/api/list/${body}`, {
+    fetch(`http://localhost:3000/api/list/${body.title}`, {
       method: 'DELETE',
-      body: JSON.stringify(body),
+      params: JSON.stringify(body),
     })
       .then((res) => res.json())
       .then((data) => {
