@@ -38,4 +38,5 @@ router.delete('/profile', dbController.deleteNotes, (req, res) => {
   return res.status(200).json(res.locals.newNotes);
 });
 
+
 module.exports = router;
