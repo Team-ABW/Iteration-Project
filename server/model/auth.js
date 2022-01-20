@@ -21,7 +21,7 @@ const sessionSchema = new Schema({
 const Session = mongoose.model('Session', sessionSchema);
 
 const SALT_WORK_FACTOR = 10;
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 
 const userSchema = new Schema({
   username: {type: String, required: true, unique: true},

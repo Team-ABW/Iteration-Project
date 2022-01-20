@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const userController = require('../controllers/authController.js');
-const cookieController = require('../controllers/authController.js');
-const sessionController = require('../controllers/authController.js');
+const { userController } = require('../controllers/authController.js');
+const { cookieController } = require('../controllers/authController.js');
+const { sessionController } = require('../controllers/authController.js');
 
 router.post('/verify', 
   userController.verifyUser,
@@ -17,7 +17,7 @@ router.post('/create',
   sessionController.startSession,
   cookieController.setSSIDCookie,
   (req, res) => {
-    res.redirect('http://localhost:8080')
+    res.redirect('http://localhost:8080/')
   });
 
   
