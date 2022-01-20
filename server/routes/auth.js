@@ -9,7 +9,7 @@ router.post('/verify',
   sessionController.startSession,
   cookieController.setSSIDCookie,
   (req, res) => {
-    res.status(200)
+    res.send('true')
   });
 router.post('/create', 
   userController.createUser,

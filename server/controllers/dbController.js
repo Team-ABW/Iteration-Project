@@ -66,8 +66,11 @@ dbController.addList = (req, res, next) => {
 };
 
 dbController.deleteList = (req, res, next) => {
-  const values = [req.params.criminal_id];
-  const delCrimQuery = 'DELETE FROM public.list WHERE criminal_id=$1;';
+  const values = [
+    req.params.id
+  ];
+  console.log(req.params.id);
+  const delCrimQuery = 'DELETE FROM public.list WHERE title=($1);';
   db.query(delCrimQuery, values)
     .then((result) => {
       db.query('SELECT * FROM public.list;')

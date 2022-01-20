@@ -95,7 +95,7 @@ function Cards({isLoggedIn}) {
 
   return (
     <div className='cards'>
-      <h1>Have You Seen These Convicts</h1>
+      <h1>People of Interest</h1>
       <div className='cards__container'>
         <div className='cards__wrapper'>{!load && renderCards()}</div>
       </div>

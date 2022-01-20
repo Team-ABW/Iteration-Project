@@ -35,7 +35,8 @@ function ListCardItem(props) {
                 </div>
                 <div className='button_wrapper'>
                     <button
-                        onClick={() => props.deleteHandleClick(props)}
+                        onClick={() => props.
+                            deleteHandleClick(props)}
                         className='button is-primary is-outlined'
                     >
                         Delete
