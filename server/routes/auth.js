@@ -9,15 +9,14 @@ router.post('/verify',
   sessionController.startSession,
   cookieController.setSSIDCookie,
   (req, res) => {
-    console.log('redirect ding')
-    res.redirect('http://localhost:8080/')
+    res.status(200)
   });
 router.post('/create', 
   userController.createUser,
   sessionController.startSession,
   cookieController.setSSIDCookie,
   (req, res) => {
-    res.redirect('http://localhost:8080/')
+    res.status(200)
   });
 
   
