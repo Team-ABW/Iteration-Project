@@ -7,6 +7,7 @@ import {
   getConvictsFromFBI,
   getConvictByFieldOffice,
   addConvictToDb,
+  deleteConvictFromDb
 } from '../async';
 
 function Cards() {
@@ -48,6 +49,7 @@ function Cards() {
     // getConvictByFieldOffice('dallas').then((data) => setConvicts(data));
   }, []);
 
+
   function handleClick(props) {
     const body = {
       title: props.title,
@@ -65,6 +67,7 @@ function Cards() {
     addConvictToDb(body).then((res) => {
       console.log('convict was added');
     });
+
   }
 
   const renderCards = () => {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../App.css';
 import { getConvictsFromDb } from '../../async';
-import CardItem from '../CardItem';
+import ListCardItem from '../ListCardItem';
 
 export default function List() {
   const [myConvicts, setMyConvicts] = useState([]);
@@ -18,7 +18,7 @@ export default function List() {
   function renderMyConvicts() {
     return myConvicts.map((convict) => {
       return (
-        <CardItem
+        <ListCardItem
           key={convict._uid}
           title={convict.title}
           images={convict.images}
