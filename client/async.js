@@ -72,6 +72,21 @@ export const getConvictById = (id) => {
   });
 };
 
+export const deleteConvictFromDb = (body) => {
+  return new Promise((resolve, reject) => {
+    fetch(`http://localhost:3000/api/list/${body}`, {
+      method: 'DELETE',
+      body: JSON.stringify(body),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        resolve(data);
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
+};
+
 // todos
 // add a function to update a convicts notes with data from state
-// add a function to remove a convict from db

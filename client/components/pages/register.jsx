@@ -12,7 +12,7 @@ const registerUser = () => {
     const register = () => {
         //store the link on a variable
 
-        Axios.post('http://localhost:3000/api/register',
+        Axios.post('http://localhost:3000/auth/create',
         {username: usernameReg,                             
          password: passwordReg,
         }).then((response) => {
