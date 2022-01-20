@@ -26,7 +26,7 @@ function Navbar({isLoggedIn}, {setIsLoggedIn}) {
   window.addEventListener('resize', showButton);
 
   let investigationsTag = false;
-  console.log('hhhhhhhheeeeeerrrreeee',isLoggedIn);
+  // console.log('hhhhhhhheeeeeerrrreeee',isLoggedIn);
 
   if (isLoggedIn) {
     investigationsTag = 
