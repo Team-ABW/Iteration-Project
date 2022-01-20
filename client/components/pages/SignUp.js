@@ -3,7 +3,7 @@ import Axios from 'axios';
 // import '../style/login.css';
 
 
-const SignUp = () => {
+const SignUp = ({isLoggedIn, setIsLoggedIn}) => {
   //the two states which will store all usernames and passwords  (for registration)
   const [usernameReg, setUsernameReg] = useState('');
   const [passwordReg, setPasswordReg] = useState('');
@@ -20,6 +20,7 @@ const SignUp = () => {
         console.log(response);
         // redirect('/');
       });
+      setIsLoggedIn(true)
     window.location.href = "http://localhost:8080";
   };
 

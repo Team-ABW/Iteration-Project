@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Axios from 'axios';
 
-const userLogin = () => {
+const userLogin = ({isLoggedIn, setIsLoggedIn}) => {
     //create two separate states for the login
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     //create a state for the login status
-    const [loginStatus, setLoginStatus] = useState('');
+    const [loginStatus, setLoginStatus] = useState(true);
 
     const login = () => {
         Axios.post('http://localhost:3000/auth/verify',
@@ -20,7 +20,7 @@ const userLogin = () => {
                 setLoginStatus("Incorrect Username/Password");
             } else {
                 //if the user is present in the db, set LoginStatus 
-                setLoginStatus("Login Successful");
+                setIsLoggedIn(true);
                 window.location.href = "http://localhost:8080";
                 console.log(loginStatus);
             }

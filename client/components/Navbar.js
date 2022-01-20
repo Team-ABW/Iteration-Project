@@ -4,7 +4,7 @@ import { LoginButton } from './LoginButton';
 import { Link } from 'react-router-dom';
 import './styles/Navbar.css';
 
-function Navbar() {
+function Navbar({isLoggedIn, setIsLoggedIn}) {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 

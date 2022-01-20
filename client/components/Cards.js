@@ -10,7 +10,7 @@ import {
   deleteConvictFromDb
 } from '../async';
 
-function Cards() {
+function Cards({isLoggedIn}) {
   const [convicts, setConvicts] = useState([]);
   const [load, setLoad] = useState(true);
 

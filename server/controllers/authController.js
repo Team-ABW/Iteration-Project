@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt')
 const cookieController = {};
 //store the user id in a cookie
 cookieController.setSSIDCookie = (req, res, next) => {
-  res.cookie('ssid', res.locals.user.id, {httpOnly: true});
+  res.cookie('ssid', res.locals.user.id, {httpOnly: true, secure: true, sameSite: true},);
   return next();
 }
 
@@ -24,6 +24,7 @@ sessionController.isLoggedIn = (req, res, next) => {
 //create and save a new Session into the database.This is the middleware that we pass in either when somebody logs in or signs up
 sessionController.startSession = (req, res, next) => {
   models.Session.create({ cookieId: res.locals.user.id}, (err, session) => {
+    console.log(res.locals.user.id)
     if (err) return next('Error in sessionController.startSession: ' + JSON.stringify(err));
     else return next();
   });
