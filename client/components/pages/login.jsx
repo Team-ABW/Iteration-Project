@@ -1,28 +1,29 @@
 import React, { useState } from "react";
 import Axios from 'axios';
+import {useNavigate} from 'react-router-dom'
 
-const userLogin = ({isLoggedIn, setIsLoggedIn}) => {
+const UserLogin = ({isLoggedIn, handleLoginState}) => {
     //create two separate states for the login
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     //create a state for the login status
     const [loginStatus, setLoginStatus] = useState(true);
-
+    const navigate = useNavigate()
     const login = () => {
         Axios.post('http://localhost:3000/auth/verify',
         {username: username,
          password: password,
         }).then((response) => {
-            console.log(response);
-            if(response.data.rows.length === 0) {
+            if(response.status === 200) {
+                //if the user is present in the db, set LoginStatus 
+                handleLoginState();
+                navigate('/list');
+                //window.location.href = "http://localhost:8080/list";
+            } else {
+                
                 console.log("Incorrect username/password");
                 //when there is no user response should show "Wrong username/password combination" (check server.js)
                 setLoginStatus("Incorrect Username/Password");
-            } else {
-                //if the user is present in the db, set LoginStatus 
-                setIsLoggedIn(true);
-                window.location.href = "http://localhost:8080";
-                console.log(loginStatus);
             }
 
         });
@@ -51,4 +52,4 @@ const userLogin = ({isLoggedIn, setIsLoggedIn}) => {
     )
 }
 
-export default userLogin; 
+export default UserLogin; 

@@ -3,7 +3,7 @@ import Axios from 'axios';
 // import '../style/login.css';
 
 
-const SignUp = ({isLoggedIn, setIsLoggedIn}) => {
+const SignUp = ({isLoggedIn}, {setIsLoggedIn}) => {
   //the two states which will store all usernames and passwords  (for registration)
   const [usernameReg, setUsernameReg] = useState('');
   const [passwordReg, setPasswordReg] = useState('');

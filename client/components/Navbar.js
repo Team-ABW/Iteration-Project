@@ -4,7 +4,7 @@ import { LoginButton } from './LoginButton';
 import { Link } from 'react-router-dom';
 import './styles/Navbar.css';
 
-function Navbar({isLoggedIn, setIsLoggedIn}) {
+function Navbar({isLoggedIn}, {setIsLoggedIn}) {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
@@ -25,9 +25,10 @@ function Navbar({isLoggedIn, setIsLoggedIn}) {
 
   window.addEventListener('resize', showButton);
 
-  let investigationsTag = null;
+  let investigationsTag = false;
+  console.log('hhhhhhhheeeeeerrrreeee',isLoggedIn);
 
-  if (isLoggedin) {
+  if (isLoggedIn) {
     investigationsTag = 
       <li className='nav-item'>
         <Link
@@ -38,6 +39,17 @@ function Navbar({isLoggedIn, setIsLoggedIn}) {
           Investigations
         </Link>
       </li>
+  }
+  
+  let buttons = 
+    <>{button && <Button buttonStyle='btn--outline'>SIGN UP</Button>
+    }
+
+      {button && <LoginButton buttonStyle='btn--outline'>LOGIN</LoginButton>}
+    </>
+
+  if (isLoggedIn) {
+    buttons = <></>
   }
 
   return (
@@ -80,9 +92,7 @@ function Navbar({isLoggedIn, setIsLoggedIn}) {
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
-          
-          {button && <LoginButton buttonStyle='btn--outline'>LOGIN</LoginButton>}
+          <>{buttons}</>
         </div>
       </nav>
     </>
